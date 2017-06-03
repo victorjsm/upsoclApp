@@ -33,6 +33,11 @@
 			<strong>User Name</strong>
 			<%=  social.userName %>
 		</p>
+		<p>
+			<%= link_to 'Destroy Social Network', [social.user, social],
+			               method: :delete,
+			               data: { confirm: 'Are you sure?' } %>
+		</p>
 	<% end %>
 
 
