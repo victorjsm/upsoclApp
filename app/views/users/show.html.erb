@@ -22,5 +22,35 @@
 		<strong>password</strong>
 		<%=  @user.password %>
 	</p>
+
+	<h2>Social Networks</h2>
+	<% @user.socials.each do |social| %>
+		<p>
+			<strong>Social ID</strong>
+			<%= social.socialID %>
+		</p>
+		<p>
+			<strong>User Name</strong>
+			<%=  social.userName %>
+		</p>
+	<% end %>
+
+
+	<h2> Add a social network:</h2>
+	<%= form_for([@user, @user.socials.build]) do |f| %>
+		<p>
+			<%= f.label :socialID %>
+			<%= f.text_field :socialID %>
+		</p>
+		<p>
+			<%= f.label :userName %>
+			<%= f.text_field :userName %>
+		</p>
+		<p>
+			<%= f.submit %>
+		</p>
+	<% end %>
+
+
 	<%= link_to 'Edit', edit_user_path(@user) %> |
 	<%= link_to 'Back', users_path %>
