@@ -14,7 +14,12 @@ class UsersController < ApplicationController
 	def update
 	end
 
+	def index
+		@users = User.all
+	end
+
 	def show
+		@user = User.find(params[:id])
 	end
 
 	private
@@ -22,7 +27,7 @@ class UsersController < ApplicationController
 			params.require(:user).permit(
 				:rut,
 				:name,
-				:lasName,
+				:lastName,
 				:birthDate,
 				:email,
 				:password)

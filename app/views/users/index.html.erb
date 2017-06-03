@@ -1,0 +1,24 @@
+<h1>List of users</h1>
+
+<table>
+	<tr>
+
+			<th>rut</th>
+			<th>name</th>
+			<th>lastName</th>
+			<th>email</th>
+			<th>birthDate</th>
+			<th>password</th>
+		
+	</tr>
+
+	<% @users.each do |user| %>
+			<TD><%= user.rut %></TD>
+			<TD><%= user.name %></TD>
+			<TD><%= user.lastName %></TD>
+			<TD><%= user.email %></TD>
+			<TD><%= user.birthDate %></TD>
+			<TD><%= user.password %></TD>
+			<TD><%= link_to 'Show', user_path(user)%></TD>
+	<%end%>
+</table>
